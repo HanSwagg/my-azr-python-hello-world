@@ -1,1 +1,2 @@
+--find-links wheelhouse
 Flask==0.12.1
