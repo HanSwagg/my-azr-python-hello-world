@@ -64,7 +64,7 @@ def not_found(error):
 
 @app.route('/')
 def hello_world():
-  return  "SCRIPT DIR :" + script_dir + " DB PATH: " + dbpath + " DB TYPE:  " +dbtype +' jSON PATH'+ jsonpath +' BACKUP PATH'+ backuppath +' pORT'+portnumber+ ' HOST'+ apphost+ ' nAME'+__name__
+  return  script_dir #+ " DB PATH: " + dbpath + " DB TYPE:  " +dbtype +' jSON PATH'+ jsonpath +' BACKUP PATH'+ backuppath +' pORT'+portnumber+ ' HOST'+ apphost+ ' nAME'+__name__
 
 @app.route('/api/insert', methods=['POST'])
 # @auth.login_required
