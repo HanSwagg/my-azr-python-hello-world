@@ -32,14 +32,7 @@ backuppath =  os.path.join(script_dir, configParser.get('JSONDATA', 'archivedir'
 apphost = configParser.get('SERVER', 'host')
 portnumber = int(configParser.get('SERVER', 'port'))
 
-print(script_dir)
-print(dbpath)
-print(dbtype)
-print(jsonpath)
-print(backuppath)
-print(portnumber)
-print(apphost)
-print(__name__)
+
 
 ##############################################################################
 # Please Updade the version and revision number before commit in the SVN repo
@@ -67,6 +60,11 @@ def not_found(error):
 @app.errorhandler(404)
 def not_found(error):
     return make_response(jsonify({'error': 'Not found'}), 404)
+
+
+@app.route('/')
+def hello_world():
+  return  "SCRIPT DIR :" + script_dir + " DB PATH: " + dbpath + " DB TYPE:  " +dbtype +' jSON PATH'+ jsonpath +' BACKUP PATH'+ backuppath +' pORT'+portnumber+ ' HOST'+ apphost+ ' nAME'+__name__
 
 @app.route('/api/insert', methods=['POST'])
 # @auth.login_required
