@@ -73,7 +73,7 @@ def InsertData():
     content = request.get_json(silent=True)
 
     strfile = os.path.join(jsonpath,datetime.datetime.now().strftime("%Y-%m-%d_%H_%M_%S") )+".json"
-
+    return hello_world()
     #with open(strfile, 'w') as outfile:
     #    json.dump(content, outfile, sort_keys=False, indent=4, separators=(',', ': ') )
 
@@ -84,7 +84,7 @@ def InsertData():
     return jsonify({'task': 'done'}), 201
 
 
-@app.route('/mkitdb/api/sendtodb', methods=['POST'])
+@app.route('/api/sendtodb', methods=['POST'])
 # @auth.login_required
 def Sendjsontodb_thread(content):
     row = content[0]
